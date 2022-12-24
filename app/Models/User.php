@@ -12,6 +12,12 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function whispers()
+    {
+        // Un usuario puede tener muchos whispers
+        return $this->hasMany(Whisper::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
