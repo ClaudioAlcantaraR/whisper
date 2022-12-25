@@ -21,16 +21,6 @@ class WhisperController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -44,28 +34,6 @@ class WhisperController extends Controller
         $request->user()->whispers()->create($validated);
 
         return redirect(route('whispers.index'));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Whisper  $whisper
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Whisper $whisper)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Whisper  $whisper
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Whisper $whisper)
-    {
-        //
     }
 
     /**
