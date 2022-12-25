@@ -13,11 +13,11 @@ Este proyecto esta actualmente en desarrollo. Por lo tanto se añadirán nuevas 
 
 ## Cómo instalar
 
-* Clona el repositorio en tu servidor local
-* Crea un nuevo archivo `.env` haciendo uso del `.env.example`. Añade los datos relativos a tu servidor de bases de datos y las claves.
-* Corre el comando `composer install`
+* Clona el repositorio en tu servidor local.
+* Crea un nuevo archivo `.env` haciendo uso del `.env.example`. Añade los datos relativos a tu servidor de bases de datos y las claves. No olvides crear tu base de datos.
+* Corre el comando `composer install` 
 * Corre el comando `npm install`
-* Crea las bases de datos `php artisan migrate`
+* Corre las migraciones `php artisan migrate`
 * Corre los comandos `npm run dev` & `php arisan serve`
 
 ## License
