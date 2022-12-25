@@ -32,11 +32,11 @@ export default function Register() {
 
     return (
         <GuestLayout>
-            <Head title="Register" />
+            <Head title="Registrarme" />
 
             <form onSubmit={submit}>
                 <div>
-                    <InputLabel forInput="name" value="Name" />
+                    <InputLabel forInput="name" value="Nombre" />
 
                     <TextInput
                         id="name"
@@ -70,7 +70,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <InputLabel forInput="password" value="Password" />
+                    <InputLabel forInput="password" value="Contraseña" />
 
                     <TextInput
                         id="password"
@@ -87,7 +87,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <InputLabel forInput="password_confirmation" value="Confirm Password" />
+                    <InputLabel forInput="password_confirmation" value="Confirmar contraseña" />
 
                     <TextInput
                         id="password_confirmation"
@@ -107,11 +107,11 @@ export default function Register() {
                         href={route('login')}
                         className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
                     >
-                        Already registered?
+                        ¿Ya tienes una cuenta?
                     </Link>
 
                     <PrimaryButton className="ml-4" processing={processing}>
-                        Register
+                        Registrarme
                     </PrimaryButton>
                 </div>
             </form>
