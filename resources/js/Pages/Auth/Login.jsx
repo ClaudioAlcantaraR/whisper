@@ -83,11 +83,11 @@ export default function Login({ status, canResetPassword }) {
                     </PrimaryButton>
                     <Link
                         href={route('register')}
-                        className="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-500 active:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150 undefined"
+                        className="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-500 rounded-md font-semibold text-xs text-gray-700 dark:text-gray-300 uppercase tracking-widest shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-25 transition ease-in-out duration-150 undefined "
                     >
                         Registrarme
                     </Link>
-                    <div className="divide-y h-px dark:bg-slate-600 w-2/4 my-3"></div>
+                    <div className="divide-y h-px dark:bg-slate-600 bg-slate-300 w-2/4 my-3"></div>
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
