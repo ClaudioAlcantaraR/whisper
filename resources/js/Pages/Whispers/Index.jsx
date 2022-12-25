@@ -12,6 +12,7 @@ export default function Index({ auth, whispers }) {
     
     const submit = (e) => {
         e.preventDefault();
+        /* Metodo http post. Referencia a la ruta y el guardado en store */
         post(route('whispers.store'), {onSuccess: () => reset()})
     }
 
@@ -31,6 +32,7 @@ export default function Index({ auth, whispers }) {
                             className="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 dark:focus:ring-indigo-600 focus:ring-indigo-500 rounded-md shadow-sm"
                             onChange={e => setData('message', e.target.value)}
                         ></textarea>
+                        {/* Manejo de los errores */}
                         <InputError message={errors.message} className="mt-2" />
                         <PrimaryButton className="mt-4" processing={processing}>Whisper</PrimaryButton>
                     </form>
