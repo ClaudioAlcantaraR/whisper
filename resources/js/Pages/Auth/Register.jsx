@@ -33,6 +33,10 @@ export default function Register() {
     return (
         <GuestLayout>
             <Head title="Registrarme" />
+            <div>
+                <h1 className="mb-3 text-2xl font-bold text-gray-900 lg:text-3xl dark:text-white">Crear una cuenta</h1>
+                <p className="mb-6 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices condimentum diam nec condimentum. Etiam vel finibus tortor.</p>
+            </div>
 
             <form onSubmit={submit}>
                 <div>
@@ -102,17 +106,19 @@ export default function Register() {
                     <InputError message={errors.password_confirmation} className="mt-2" />
                 </div>
 
-                <div className="flex items-center justify-end mt-4">
+                <div className="mt-5">
+                    <PrimaryButton processing={processing}>
+                        Crear cuenta
+                    </PrimaryButton>
+                </div>
+                <div className="mt-4">
+                    <span className="text-gray-700 dark:text-gray-400 mr-1">¿No estas registrado?</span>
                     <Link
                         href={route('login')}
-                        className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                    >
-                        ¿Ya tienes una cuenta?
+                        className="text-indigo-500 dark:text-indigo-500 hover:text-indigo-400 underline"
+                        >
+                            Iniciar sesión
                     </Link>
-
-                    <PrimaryButton className="ml-4" processing={processing}>
-                        Registrarme
-                    </PrimaryButton>
                 </div>
             </form>
         </GuestLayout>

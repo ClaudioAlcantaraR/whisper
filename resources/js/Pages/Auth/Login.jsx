@@ -33,6 +33,10 @@ export default function Login({ status, canResetPassword }) {
     return (
         <GuestLayout>
             <Head title="Acceder" />
+            <div>
+                <h1 className="mb-3 text-2xl font-bold text-gray-900 lg:text-3xl dark:text-white">Accede a tu cuenta</h1>
+                <p className="mb-6 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices condimentum diam nec condimentum. Etiam vel finibus tortor.</p>
+            </div>
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
@@ -70,24 +74,11 @@ export default function Login({ status, canResetPassword }) {
                     <InputError message={errors.password} className="mt-2" />
                 </div>
 
-                <div className="block mt-4">
+                <div className="block mt-4 flex items-center justify-between">
                     <label className="flex items-center">
                         <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
                         <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">Recuerdame</span>
                     </label>
-                </div>
-
-                <div className="flex items-center justify-center flex-col mt-4">
-                    <PrimaryButton className="mb-3" processing={processing}>
-                        Acceder
-                    </PrimaryButton>
-                    <Link
-                        href={route('register')}
-                        className="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-500 rounded-md font-semibold text-xs text-gray-700 dark:text-gray-300 uppercase tracking-widest shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-25 transition ease-in-out duration-150 undefined "
-                    >
-                        Registrarme
-                    </Link>
-                    <div className="divide-y h-px dark:bg-slate-600 bg-slate-300 w-2/4 my-3"></div>
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
@@ -96,6 +87,20 @@ export default function Login({ status, canResetPassword }) {
                             ¿Olvidaste tu contraseña?
                         </Link>
                     )}
+                </div>
+                <div className="mt-4">
+                    <PrimaryButton className="my-3" processing={processing}>
+                        Acceder
+                    </PrimaryButton>
+                </div>
+                <div className="mt-4"> 
+                    <span className="text-gray-700 dark:text-gray-400 mr-1">¿No estas registrado?</span>
+                    <Link
+                        href={route('register')}
+                        className="text-indigo-500 dark:text-indigo-500 hover:text-indigo-400 underline"
+                    >
+                        Crear una cuenta
+                    </Link>
                 </div>
             </form>
             
