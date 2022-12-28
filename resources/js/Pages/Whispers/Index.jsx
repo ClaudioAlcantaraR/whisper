@@ -31,6 +31,7 @@ export default function Index({ auth, whispers }) {
                             placeholder="¿En que estas pensando?"
                             className="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 dark:focus:ring-indigo-600 focus:ring-indigo-500 rounded-md shadow-sm"
                             onChange={e => setData('message', e.target.value)}
+                            autoFocus
                         ></textarea>
                         {/* Manejo de los errores */}
                         <InputError message={errors.message} className="mt-2" />
