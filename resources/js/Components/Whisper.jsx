@@ -42,29 +42,7 @@ export default function Whisper({ whisper }) {
                         <small className="ml-2 text-sm text-gray-600 dark:text-gray-400">{dayjs(whisper.created_at).fromNow()}</small>
                         { whisper.created_at !== whisper.updated_at && <small className="text-sm text-gray-600 dark:text-gray-400"> &middot; editado</small> }
                     </div>
-                </div>
-                {editing 
-                    ? <form onSubmit={submit}>
-                        <textarea
-                            value={data.message}
-                            onChange={e => setData('message', e.target.value)}
-                            className="mt-4 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 dark:focus:ring-indigo-600 rounded-md shadow-sm"></textarea>
-                        <InputError 
-                            message={errors.message}
-                            class="mt-2" />
-                        <div className="space-x-2">
-                            <PrimaryButton className="mt-4">Modificar</PrimaryButton>
-                            <SecondaryButton onClick={() => { setEditing(false); reset(); clearErrors(); }}>Cancelar</SecondaryButton>
-                        </div>
-                    </form> 
-                 : (
-                    <>
-                        <span className="text-gray-800 dark:text-gray-200 text-md">{whisper.message}</span>    
-                    </>
-                    ) 
-                }
-            </div>
-            <div className="flex items-center justify-end mt-2 gap-4">
+                    <div className="flex items-center justify-end mt-2 gap-4">
             {/* TODO: Añadir tooltips a los iconos */}
             {whisper.user.id === auth.user.id &&
             <>
@@ -104,6 +82,29 @@ export default function Whisper({ whisper }) {
             </>    
         }
             </div>
+                </div>
+                {editing 
+                    ? <form onSubmit={submit}>
+                        <textarea
+                            value={data.message}
+                            onChange={e => setData('message', e.target.value)}
+                            className="mt-4 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 dark:focus:ring-indigo-600 rounded-md shadow-sm"></textarea>
+                        <InputError 
+                            message={errors.message}
+                            class="mt-2" />
+                        <div className="space-x-2">
+                            <PrimaryButton className="mt-4">Modificar</PrimaryButton>
+                            <SecondaryButton onClick={() => { setEditing(false); reset(); clearErrors(); }}>Cancelar</SecondaryButton>
+                        </div>
+                    </form> 
+                 : (
+                    <>
+                        <span className="text-gray-800 dark:text-gray-200 text-md">{whisper.message}</span>    
+                    </>
+                    ) 
+                }
+            </div>
+            
         </div>
     );
 }
